@@ -1,101 +1,91 @@
+import Head from "next/head";
+import { Inter } from "next/font/google";
+import Layout from "@/components/Layout";
 import Image from "next/image";
+import profilePic from "../../public/images/profile/profilealt.png";
+import Link from "next/link";
+import { LinkArrow } from "@/components/Icons";
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <Head>
+        {/*<!-- HTML Meta Tags -->*/}
+        <title>BeeSeeWhy&apos;s Portfolio</title>
+        <meta name="description" content="Brandon Cruz-Youll's Portfolio." />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+        {/*<!-- Facebook Meta Tags -->*/}
+        <meta property="og:url" content="https://www.beeseewhy.dev/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Brandon Cruz-Youll's Portfolio" />
+        <meta property="og:description" content="BCY = BeeSeeWhy." />
+        <meta
+          property="og:image"
+          content="https://www.beeseewhy.dev/profilealt.png"
+        />
+
+        {/*<!-- Twitter Meta Tags -->*/}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta property="twitter:domain" content="beeseewhy.dev" />
+        <meta property="twitter:url" content="https://www.beeseewhy.dev/" />
+        <meta name="twitter:title" content="Brandon Cruz-Youll's Portfolio" />
+        <meta name="twitter:description" content="BCY = BeeSeeWhy." />
+        <meta
+          name="twitter:image"
+          content="https://www.beeseewhy.dev/profilealt.png"
+        />
+      </Head>
+      <main className="flex items-center text-dark w-full min-h-screen">
+        <Layout className="pt-0">
+          <div className="flex items-center justify-between w-full">
+            <div className="w-1/2">
+              <Image src={profilePic} alt="Brandon" className="w-full h-auto" />
+            </div>
+            <div className="w-1/2 flex flex-col items-center self-center">
+              <h1 className="!text-8xl font-bold !text-left">
+                From Vision to Screen: Engineering Your Digital Future.
+              </h1>
+
+              <p className="my-4 text-base font-medium">
+                As a passionate and skilled front-end developer, I specialize in
+                transforming ideas into dynamic and visually stunning web
+                applications. My expertise in modern technologies like React.js
+                allows me to build seamless, high-performance user interfaces
+                that not only look great but also deliver exceptional user
+                experiences. On this portfolio site, you&apos;ll find a curated
+                selection of my latest projects that highlight my proficiency in
+                crafting responsive designs, optimizing performance, and
+                implementing interactive features. Dive into my work to see how
+                I combine creativity with technical expertise to bring
+                innovative concepts to life and solve complex challenges in web
+                development.
+              </p>
+              <div className="flex items-center self-start mt-2">
+                <Link
+                  href="/Brandon_CruzYoull_Resume.pdf"
+                  target={"_blank"}
+                  className="flex items-center bg-dark text-light p-2.5 px-6
+              rounded-lg text-lg font-semibold hover:bg-light hover:text-dark
+              border-2 border-solid border-transparent hover:border-dark
+              "
+                  download={true}
+                >
+                  Resume <LinkArrow className={"w-6 ml-1"} />
+                </Link>
+                <Link
+                  href="mailto:brandon.cruzyoull@gmail.com"
+                  target={"_blank"}
+                  className="ml-4 text-lg font-medium capitalize text-dark underline"
+                >
+                  Contact
+                </Link>
+              </div>
+            </div>
+          </div>
+        </Layout>
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+    </>
   );
 }
